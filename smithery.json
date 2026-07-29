@@ -1,0 +1,21 @@
+{
+  "name": "mcp-utility-server",
+  "version": "0.1.0",
+  "description": "MCP Server with web_fetch, timezone, and calculator tools",
+  "tools": [
+    {
+      "name": "web_fetch",
+      "description": "Fetch content from a webpage"
+    },
+    {
+      "name": "current_time",
+      "description": "Get current time in specified timezone"
+    },
+    {
+      "name": "calculator",
+      "description": "Evaluate a mathematical expression"
+    }
+  ],
+  "repository": "https://github.com/chengganping/mcp-utility-server",
+  "license": "MIT"
+}
