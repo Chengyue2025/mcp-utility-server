@@ -1,0 +1,23 @@
+{
+  "name": "mcp-utility-server",
+  "version": "0.1.0",
+  "description": "MCP Server with web_fetch, timezone, calculator tools",
+  "type": "module",
+  "bin": {
+    "mcp-utility": "server.py"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai",
+    "agent",
+    "tools",
+    "claude"
+  ],
+  "author": "Chengyue2025",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chengyue2025/mcp-utility-server"
+  }
+}
