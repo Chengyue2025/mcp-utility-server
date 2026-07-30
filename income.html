@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>Income Tracker</title>
+<script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-gray-50">
+<div class="max-w-4xl mx-auto p-8">
+<h1 class="text-3xl font-bold mb-8">Income Tracker</h1>
+<div id="stats" class="grid md:grid-cols-3 gap-6 mb-8"></div>
+<div class="bg-white rounded-xl p-6 mb-8">
+<h2 class="text-xl font-bold mb-4">Income Streams</h2>
+<table class="w-full" id="streams">
+<tr class="border-b"><th class="text-left py-2">Source</th><th class="text-right">Status</th><th class="text-right">Monthly</th></tr>
+<tr><td class="py-2">MCP Pro</td><td class="text-right text-yellow-500">Setup Only</td><td class="text-right">$0</td></tr>
+<tr><td class="py-2">MCP Team</td><td class="text-right text-yellow-500">Setup Only</td><td class="text-right">$0</td></tr>
+<tr class="font-bold bg-gray-50"><td>TOTAL</td><td></td><td class="text-right">$0/mo</td></tr>
+</table>
+</div>
+<div class="bg-green-50 p-6 rounded-xl">
+<h3 class="font-bold mb-2">How to start earning today:</h3>
+<ol class="list-decimal ml-6 space-y-2 text-sm">
+<li>Register on <a href="https://smithery.ai" class="text-indigo-600">smithery.ai</a> with GitHub</li>
+<li>Post on <a href="https://dev.to" class="text-indigo-600">Dev.to</a> (article ready in ub_output/)</li>
+<li>Run Agent Factory: cd E:\agent-factory-prod && python app.py</li>
+<li>Check <a href="https://github.com/Chengyue2025/mcp-utility-server" class="text-indigo-600">GitHub Repo</a></li>
+</ol>
+</div>
+</div>
+<script>
+fetch('/health').then(r=>r.json()).then(d=>{
+document.getElementById('stats').innerHTML=
+`<div class="bg-white p-6 rounded-xl"><h3 class="text-gray-500">Service</h3><p class="text-2xl font-bold">${d.status}</p></div>`+
+`<div class="bg-white p-6 rounded-xl"><h3 class="text-gray-500">Tools</h3><p class="text-2xl font-bold">${d.tools?.length||0}</p></div>`+
+`<div class="bg-white p-6 rounded-xl"><h3 class="text-gray-500">Pro Price</h3><p class="text-2xl font-bold">$${d.pricing?.pro?.price||19.99}</p></div>`
+}).catch(()=>{})
+</script>
+</body></html>
